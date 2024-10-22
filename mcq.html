@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./Images/favicon.png" type="image/x-icon">
+
+    <!-- All CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Learn Stream | MCQ </title>
+
+    <style>
+        .mcq-section {
+            background-color: #161B2D;
+        }
+
+        .mcq-hero-content-wrapper {
+            padding-top: 160px;
+            padding-bottom: 80px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .mcq-hero-title {
+            color: #fff;
+            font-size: 48px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .mcq-hero-chapter-no {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .mcq-hero-mcq-no {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .mcq-step-section {
+            padding-top: 160px;
+            padding-bottom: 80px;
+            background-color: #F8FAFA;
+        }
+
+        .mcq-step-content-wrapper {
+            background-color: #fff;
+            padding-top: 32px;
+        }
+
+        form {
+            height: 100%;
+            margin-top: 0px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+
+
+
+        .step-count {
+            font-size: 16px;
+            color: rgb(70, 70, 70);
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .steps {
+            background-color: rgb(255, 255, 255);
+            width: 100%;
+            flex: 1;
+            border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .quiz-question {
+            font-size: 32px;
+            color: #161B2D;
+            /* background-image: linear-gradient(90deg, rgb(120, 93, 18) 0%, rgb(199, 173, 12) 0%, rgb(150, 0, 186) 0%, rgb(83, 10, 101) 100%); */
+            /* -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; */
+            font-weight: bold;
+            width: 65%;
+            margin: 30px auto;
+        }
+
+
+        fieldset {
+            position: relative;
+            z-index: 1000;
+            width: 80%;
+            margin: 0 auto;
+            margin-top: 50px;
+            /* flex: 1; */
+        }
+
+        .radio-field {
+            padding: 20px 10px;
+            width: 97%;
+            position: relative;
+            display: grid;
+            align-items: center;
+            justify-content: start;
+            margin-bottom: 50px;
+            padding-left: 30px;
+        }
+
+        .radio-field input {
+            -webkit-appearance: none;
+            position: absolute;
+            top: 0px;
+            left: 0;
+            border: solid 4px rgb(219, 219, 219);
+            border-radius: 10px;
+            background-color: rgb(255, 255, 255);
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+
+
+        .radio-field label {
+            font-size: 18px;
+            color: #161B2D;
+            font-weight: bold;
+            pointer-events: none;
+            position: relative;
+            z-index: 10;
+            transition: 0.5s;
+        }
+
+        .radio-field input:checked {
+            border: solid 4px rgb(219, 219, 219);
+            background-image: linear-gradient(270deg, rgb(83, 31, 172) 20%, rgb(24, 78, 240) 100%);
+        }
+
+        .radio-field input:checked~label {
+            color: #fff;
+        }
+
+        .next-prev {
+            width: 100%;
+            height: 100%;
+            flex-wrap: wrap;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .next-prev button {
+            margin-top: 20px;
+            background-color: rgb(202, 202, 202);
+            padding: 15px 20px;
+
+            border-top-right-radius: 20px;
+            font-size: 18px;
+            color: #161B2D;
+            font-weight: 500;
+            border: 0;
+            text-transform: uppercase;
+        }
+
+        .next-prev button i {
+            position: relative;
+            top: 1px;
+            margin: 0 10px;
+        }
+
+        .next-prev .next {
+            color: rgb(255, 255, 255);
+            background-image: linear-gradient(90deg, rgb(120, 93, 18) 0%, rgb(199, 173, 12) 0%, rgb(150, 0, 186) 0%, rgb(83, 10, 101) 100%);
+            border-radius: 0;
+            border-top-left-radius: 20px;
+        }
+
+        .hints {
+            border-top-right-radius: 20px !important;
+            border-top-left-radius: 20px !important;
+        }
+
+        #error div {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 9999999999;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- Navbar Start-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <!-- Navbar logo -->
+            <a class="navbar-logo" href="index.html">
+                <span>Learn</span> Stream
+            </a>
+
+            <!-- Right side toggle button for mobile view -->
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar links and login button -->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav mx-auto gap-3">
+                    <li class="nav-item">
+                        <a class="nav-link " href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="practice.html">Practice</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Hybrid Test</a>
+                    </li>
+                </ul>
+
+                <!-- Right side login button -->
+                <div class="d-flex ms-lg-auto">
+                    <div class="primary-button"> <a href="login.html">Login</a></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End-->
+
+    <!-- MCQ Hero Start -->
+    <!-- <section class="mcq-section">
+        <div class="container">
+            <div class="row">
+                <div class="mcq-hero-content-wrapper">
+                    <h1 class="mcq-hero-title">Physics</h1>
+                    <p class="mcq-hero-chapter-no">Chapters: 1</p>
+                    <p class="mcq-hero-mcq-no">MCQs: 30</p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- MCQ Hero End -->
+
+    <!-- MCQ Step Start -->
+    <section class="mcq-step-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="mcq-step-content-wrapper">
+                        <form action="" class="show-section">
+                            <div class="move">
+                                <div class="step-count">
+                                    Question <span id="activeStep">1</span>/5
+                                </div>
+                            </div>
+                            <!-- Step 1 -->
+                            <div class="steps">
+                                <h1 class="quiz-question">
+                                    What is your country name?
+                                </h1>
+                                <!-- quiz option form -->
+                                <fieldset id="step-1">
+                                    <div class="row overflow-hidden">
+                                        <div class="col-md-6">
+                                            <div class="input-field">
+                                                <div class="radio-field me-auto bounce-left">
+                                                    <input type="checkbox" name="op1" value="Russia">
+                                                    <label>Russia</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-field">
+                                                <div class="radio-field me-auto bounce-left">
+                                                    <input type="checkbox" name="op1" value="Russia">
+                                                    <label>Russia</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-field">
+                                                <div class="radio-field me-auto bounce-left delay-200">
+                                                    <input type="checkbox" name="op1" value="Australia">
+                                                    <label>Australia</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-field">
+                                                <div class="radio-field me-auto bounce-left delay-200">
+                                                    <input type="checkbox" name="op1" value="Bangladesh">
+                                                    <label>Bangladesh</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <!-- Next Prev Hints and  -->
+                                <div class="next-prev">
+                                    <button type="button" class="next" id="step1btn">next question<i
+                                            class="fa-solid fa-arrow-right"></i></button>
+                                    <div>
+                                        <button type="button" class="next hints" id="step1btn">Show Hints</button>
+                                    </div>
+                                    <!-- <div></div> -->
+                                </div>
+                            </div>
+                            <!-- Step 2 -->
+                            <div class="steps">
+                                <h1 class="quiz-question">
+                                    What is your best subject?
+                                </h1>
+                                <!-- quiz option form -->
+                                <fieldset id="step-2">
+                                    <div class="row overflow-hidden">
+                                        <div class="col-md-6">
+                                            <div class="input-field">
+                                                <div class="radio-field me-auto bounce-left">
+                                                    <input type="checkbox" name="op2" value="Physics">
+                                                    <label>Physics</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-field">
+                                                <div class="radio-field me-auto bounce-left">
+                                                    <input type="checkbox" name="op2" value="Math">
+                                                    <label>Math</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-field">
+                                                <div class="radio-field me-auto bounce-left delay-200">
+                                                    <input type="checkbox" name="op2" value="Chemistry">
+                                                    <label>Chemistry</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-field">
+                                                <div class="radio-field me-auto bounce-left delay-200">
+                                                    <input type="checkbox" name="op2" value="Bangla">
+                                                    <label>Bangla</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <!-- Next Prev Hints and  -->
+                                <div class="next-prev">
+                                    <button type="button" class="prev"><i class="fa-solid fa-arrow-left"></i>Prev
+                                        question</button>
+                                    <div>
+                                        <button type="button" class="next hints" id="step1btn">Show Hints</button>
+                                    </div>
+                                    <button type="button" class="next" id="step2btn">next question<i
+                                            class="fa-solid fa-arrow-right"></i></button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- MCQ Step End -->
+
+
+    <!-- Footer Start -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class=" footer-top aos-init aos-animate" data-aos-duration="500" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="footer-logo-wrapper">
+                            <a class="navbar-logo footer-brand" href="index.html">
+                                <span>Learn</span> Stream
+                            </a>
+                            <div class="footer-small-description">
+                                <p>Redefine the technologies for multimedia based the in this is networks.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="footer-link-wrapper">
+                            <h3 class=" footer-link-title">Quick Links</h3>
+                            <ul class="footer-link-list">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="footer-link-wrapper">
+                            <h3 class=" footer-link-title">Services</h3>
+                            <ul class="footer-link-list">
+                                <li><a href="#">Expert Mentor</a></li>
+                                <li><a href="#">24/7 Support</a></li>
+                                <li><a href="#">30 Days Free Trial</a></li>
+                                <li><a href="#">Secure Payment</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Contact -->
+                    <div class="col-lg-3">
+                        <div class="footer-contact-wrapper">
+                            <h3 class="footer-title footer-contact-title">Contact Us</h3>
+                            <div class="footer-contact-info">
+                                <p>Address: 1234 Street Name, City Name, Jashore</p>
+                                <p>Phone: +1234567890</p>
+                                <p>Email: just@gmail.com</p>
+                            </div>
+                            <div class="footer-social-icon">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-copyright-wrapper">
+                    <p>Copyright @ 2024 Learn Stream . All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- Script Cdn -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/aos.js"></script>
+    <script src="script.js"></script>
+
+
+
+</body>
+
+</html>
