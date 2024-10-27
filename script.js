@@ -49,3 +49,19 @@ let swiperCard = new Swiper(".card-content", {
     },
 });
 
+// timer
+var count = 60;
+
+var interval = setInterval(function () {
+
+    if (count == 0) {
+        clearInterval(interval);
+    }
+    else {
+        count = count - 1;
+    }
+    document.getElementById("countdown-timer").innerHTML = count;
+}, 1000);
+
+
+

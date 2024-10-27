@@ -19,6 +19,7 @@
 html,
 body {
     color: var(--text-color);
+    /* background-color: #F8FAFA; */
     font-size: 18px;
     line-height: 30px;
     font-family: "Urbanist", sans-serif;

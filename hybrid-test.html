@@ -217,6 +217,20 @@
             left: 20px;
             z-index: 9999999999;
         }
+
+        .per-sub-ques-wrapper input {
+            width: 100%;
+            height: 60px;
+            border: solid 2px rgb(219, 219, 219);
+            border-radius: 8px;
+            padding: 20px 20px;
+        }
+
+
+
+        .per-sub-ques-wrapper input:focus {
+            outline: none;
+        }
     </style>
 
 </head>
@@ -266,9 +280,8 @@
     <section class="mcq-subject-info">
         <div class="container">
             <div class="subject-info-wrapper">
-                <h1 class="subject-name">Physics</h1>
-                <p class="card-text">Chapters: 8</p>
-                <p class="card-text">MCQs: 60</p>
+                <h1 class="subject-name">Hybrid Test</h1>
+                <p class="card-text">Choose single subject or multiple subject</p>
             </div>
 
         </div>
@@ -284,93 +297,121 @@
                 <div class="col-lg-12">
                     <div class="mcq-step-content-wrapper">
                         <form action="" class="show-section">
-                            <div class="move">
-                                <div class="step-count">
-                                    Question <span id="activeStep">1</span>/5
-                                </div>
-                            </div>
+
                             <!-- Step 1 -->
                             <div class="steps">
-                                <h1 class="quiz-question">
-                                    What is your country name?
-                                </h1>
                                 <!-- quiz option form -->
                                 <fieldset id="step-1">
                                     <div class="row overflow-hidden">
                                         <div class="col-md-6">
                                             <div class="input-field">
                                                 <div class="radio-field me-auto bounce-left">
-                                                    <input type="checkbox" name="op1" value="Russia">
-                                                    <label>Russia</label>
+                                                    <input type="checkbox" name="op1" value="Bangla">
+                                                    <label>Bangla</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-field">
+                                                <div class="per-sub-ques-wrapper">
+                                                    <input type="number" placeholder="Per subject question">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="input-field">
                                                 <div class="radio-field me-auto bounce-left">
-                                                    <input type="checkbox" name="op1" value="Russia">
-                                                    <label>Russia</label>
+                                                    <input type="checkbox" name="op1" value="English">
+                                                    <label>English</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="input-field">
-                                                <div class="radio-field me-auto bounce-left delay-200">
-                                                    <input type="checkbox" name="op1" value="Australia">
-                                                    <label>Australia</label>
+                                                <div class="per-sub-ques-wrapper">
+                                                    <input type="number" placeholder="Per subject question">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="input-field">
-                                                <div class="radio-field me-auto bounce-left delay-200">
-                                                    <input type="checkbox" name="op1" value="Bangladesh">
-                                                    <label>Bangladesh</label>
+                                                <div class="radio-field me-auto bounce-left">
+                                                    <input type="checkbox" name="op1" value="ICT">
+                                                    <label>ICT</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-field">
+                                                <div class="per-sub-ques-wrapper">
+                                                    <input type="number" placeholder="Per subject question">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-field">
+                                                <div class="radio-field me-auto bounce-left">
+                                                    <input type="checkbox" name="op1" value="ICT">
+                                                    <label>Physics</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-field">
+                                                <div class="per-sub-ques-wrapper">
+                                                    <input type="number" placeholder="Per subject question">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-field">
+                                                <div class="radio-field me-auto bounce-left">
+                                                    <input type="checkbox" name="op1" value="ICT">
+                                                    <label>Math</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-field">
+                                                <div class="per-sub-ques-wrapper">
+                                                    <input type="number" placeholder="Per subject question">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-field">
+                                                <div class="radio-field me-auto bounce-left">
+                                                    <input type="checkbox" name="op1" value="ICT">
+                                                    <label>Chemistry</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-field">
+                                                <div class="per-sub-ques-wrapper">
+                                                    <input type="number" placeholder="Per subject question">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </fieldset>
                                 <!-- Next Prev Hints and  -->
-                                <div class="next-prev">
 
-                                    <button type="button" class="button" id="step1btn"><i
-                                            class="fa-solid fa-arrow-left"></i>Prev question</button>
-
-                                    <button type="button" class="button button-submit" id="step1btn">Submit</button>
-
-
-                                    <button type="button" class="button" id="step1btn">next question<i
-                                            class="fa-solid fa-arrow-right"></i></button>
-
-                                </div>
-                                <div class="hints-btn-wrapper">
-                                    <button type="button" class="button" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModalCenter">
-                                        Show Hints
-                                    </button>
-                                </div>
-
-                                <!-- Modal -->
-                                <!-- Modal -->
-                                <div class="modal fade" id="exampleModalCenter" tabindex="-1"
-                                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalCenterTitle">Question Hints ID
-                                                </h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                This is our question hints for you. You can use this hints for your
-                                                better understanding.
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <div class="col-md-6">
+                                        <div class="input-field">
+                                            <div class="per-sub-ques-wrapper">
+                                                <input type="number" placeholder="Test duration">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Modal Hinst -->
+
+                                <div class="hints-btn-wrapper  ">
+                                    <button class="button">Start Test</button>
+                                </div>
+
+
                             </div>
                         </form>
                     </div>
