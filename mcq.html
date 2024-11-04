@@ -14,12 +14,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/fontawesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/aos.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
 
     <title>Learn Stream | MCQ </title>
 
@@ -63,7 +66,7 @@
         }
 
         .mcq-step-section {
-            padding-top: 60px;
+            padding-top: 160px;
             padding-bottom: 80px;
             background-color: #F8FAFA;
         }
@@ -217,6 +220,28 @@
             left: 20px;
             z-index: 9999999999;
         }
+
+        .step-bar-progress-wrapper {
+            margin-bottom: 20px;
+        }
+
+        .step-bar {
+            border: solid 2px rgb(255, 255, 255);
+            background-color: #FF4E59;
+            height: 28px;
+            width: 80%;
+            border-radius: 50px;
+            margin: 0 auto;
+            padding: 4px;
+        }
+
+        .step-bar .fill {
+            width: 20%;
+            height: 100%;
+            border-radius: inherit;
+            background-color: rgb(255, 255, 255);
+            transition: 0.5s;
+        }
     </style>
 
 </head>
@@ -262,18 +287,6 @@
     <!-- Navbar End-->
 
 
-    <!-- SUbject Hero Start -->
-    <section class="mcq-subject-info">
-        <div class="container">
-            <div class="subject-info-wrapper">
-                <h1 class="subject-name">Physics</h1>
-                <p class="card-text">Chapters: 8</p>
-                <p class="card-text">MCQs: 60</p>
-            </div>
-
-        </div>
-    </section>
-    <!-- SUbject Hero End -->
 
 
 
@@ -283,6 +296,11 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="mcq-step-content-wrapper">
+                        <div class="step-bar-progress-wrapper">
+                            <div class="step-bar">
+                                <div class="fill"></div>
+                            </div>
+                        </div>
                         <form action="" class="show-section">
                             <div class="move">
                                 <div class="step-count">
@@ -445,18 +463,17 @@
     <!-- Footer End -->
 
     <!-- Script Cdn -->
-
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
+    <script src="./js/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
-
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/swiper-bundle.min.js"></script>
     <script src="./js/aos.js"></script>
-    <script src="script.js"></script>
+    <script src="./js/script.js"></script>
 
 
 
